@@ -1,0 +1,25 @@
+Algoritmo "Media4"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Maicon
+// Descrição   : Media 4 notas
+// Autor(a)    : Ellen R. Mateus de Souza
+// Data atual  : 21/08/2023
+Var
+// Seção de Declarações das variáveis 
+n1,n2,n3,n4,result:real
+
+Inicio
+// Seção de Comandos, procedimento, funções, operadores, etc... 
+        Escreva ("Nota 1: ")
+        Leia (n1)
+        Escreva ("Nota 2: ")
+        Leia (n2)
+        Escreva ("Nota 3: ")
+        Leia (n3)
+        Escreva ("Nota 4: ")
+        Leia (n4)
+
+       result := (n1 + n2 + n3 + n4) / 4
+       Escreva("MÉDIA é: ", result)
+        
+Fimalgoritmo
