@@ -1,0 +1,49 @@
+Algoritmo "classificacaoTriangulos"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Antonio Carlos Nicolodi 
+// Descrição   : Aqui você descreve o que o programa faz! (função)
+// Autor(a)    : Nome do(a) aluno(a)
+// Data atual  : 29/08/2023
+Var
+// Seção de Declarações das variáveis 
+
+   a, b, c: real
+   resultado: caractere
+   
+   
+Inicio
+// Seção de Comandos, procedimento, funções, operadores, etc... 
+   escreva("Digite o comprimento do lado A: ")
+   leia(a)
+
+   escreva("Digite o comprimento do lado B: ")
+   leia(b)
+
+   escreva("Digite o comprimento do lado C: ")
+   leia(c)
+
+   se (a + b > c ) e (a + c > b) e (b + c > a) entao
+   
+      se (a = b) e (a = c) entao
+         resultado <- "Triângulo equilátero"
+         
+      senao se (a = b) ou (a = c) ou (b = c) entao
+         resultado <- "Triângulo isósceles"
+         
+        FimSe
+        
+      senao
+         resultado <- "Triângulo escaleno"
+         
+
+
+   senao
+      resultado <- "Não é possível formar um triângulo"
+      
+   fimse
+
+   escreval(resultado)
+
+
+   
+Fimalgoritmo
