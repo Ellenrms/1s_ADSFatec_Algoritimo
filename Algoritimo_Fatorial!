@@ -1,0 +1,21 @@
+Algoritmo "semnome"
+// Descrição   : Fatorial1
+// Autor(a)    : Ellen MAteus
+// Data atual  : 25/09/2023
+Var
+// Seção de Declarações das variáveis 
+
+   numero, fatorial, i: inteiro
+
+Inicio
+   Escreva("Digite um número inteiro: ")
+   Leia(numero)
+
+   fatorial <- 1
+
+   Para i de 1 ate numero faca
+      fatorial <- fatorial * i
+   FimPara
+
+   Escreva("O fatorial de ", numero, " é ", fatorial)
+FimAlgoritmo
