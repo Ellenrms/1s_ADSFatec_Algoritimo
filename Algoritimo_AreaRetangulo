@@ -1,0 +1,24 @@
+Algoritmo "areaRetangulo"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Maicon
+// Descrição   : Exercícios Algoritimo
+// Autor(a)    : ellen Mateus
+// Data atual  : 22/08/2023
+Var
+// Seção de Declarações das variáveis 
+    base,altura, result:  real
+
+
+Inicio
+// Seção de Comandos, procedimento, funções, operadores, etc... 
+         Escreva ("Qual a Base do Retângulo: ")
+         Leia (base)
+         Escreva ("Qual a Altura do Retângulo: ")
+         Leia (Altura)
+         
+         result:= (altura * base)
+         Escreva ("Aréa é: ", result)
+         
+         
+
+Fimalgoritmo
