@@ -1,0 +1,35 @@
+   nome: caractere
+   salario: real
+   horatrabalhada: real
+   bonus: real
+   descontos: real
+   mes: caractere
+   valorHora: real
+   result: real
+
+Inicio
+   Escreva ("Nome do Funcionário: ")
+   Leia(nome)
+
+   Escreva ("Qual o Salário: R$ ")
+   Leia(salario)
+
+   Escreva ("Qual o mês corrente: ")
+   Leia(mes)
+
+   Escreva ("Quantas horas trabalhadas: ")
+   Leia(horatrabalhada)
+
+   valorHora <- salario / horatrabalhada
+
+   Escreva ("Qual o Valor do Bônus: R$ ")
+   Leia(bonus)
+
+   Escreva ("Qual o total de desconto: R$ ")
+   Leia(descontos)
+
+   result <- (valorHora * horatrabalhada) + bonus - descontos
+   Escreval("Nome: ", nome)
+   Escreval("No Mês de: ", mes)
+   Escreval("Seu Salário é R$ ", result)
+Fimalgoritmo
