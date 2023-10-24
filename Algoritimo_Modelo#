@@ -1,0 +1,92 @@
+Algoritmo "semnome"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Antonio Carlos Nicolodi 
+// Descrição   : Aqui você descreve o que o programa faz! (função)
+// Autor(a)    : Nome do(a) aluno(a)
+// Data atual  : 02/10/2023
+Var
+// Seção de Declarações das variáveis 
+l, c: inteiro
+
+Inicio
+// Seção de Comandos, procedimento, funções, operadores, etc... 
+escreval("##################### MODELO 1 ###################")
+escreval("")
+
+para l <- 0 ate 9 faca
+     para c <- 0 ate 9 faca
+
+          escreva("[", l, ",", c, "]  ")
+     
+     fimpara
+          escreval("")
+fimpara
+
+escreval("")
+escreval("##################### MODELO 2 ###################")
+escreval("")
+
+
+para l <- 0 ate 9 faca
+     para c <- 0 ate 9 faca
+         se(l=c) entao
+
+                 escreva("[", l, ",", c, "]  ")
+                 senao
+                      escreva("         ")
+         fimse
+     fimpara
+        escreval("")
+fimpara
+
+escreval("")
+escreval("##################### MODELO 3 ###################")
+escreval("")
+
+
+para l <- 0 ate 9 faca
+     para c <- 0 ate 9 faca
+          se(l+c = 9) entao
+
+                 escreva("[", l, ",", c, "]  ")
+          senao
+                 escreva("         ")
+          fimse
+     fimpara
+        escreval("")
+fimpara
+
+escreval("")
+escreval("##################### MODELO 4 ###################")
+escreval("")
+
+para l <- 0 ate 9 faca
+     para c <- 0 ate 9 faca
+          se(c = 4) entao
+
+                 escreva("[", l, ",", c, "]  ")
+          senao
+                 escreva("         ")
+          fimse
+     fimpara
+        escreval("")
+fimpara
+
+escreval("")
+escreval("##################### MODELO 5 ###################")
+escreval("")
+
+para l <- 0 ate 9 faca
+     para c <- 0 ate 9 faca
+          se(l = 4) entao
+
+                 escreva("[", l, ",", c, "]  ")
+          senao
+                 escreva("         ")
+          fimse
+     fimpara
+        escreval("")
+fimpara
+
+
+Fimalgoritmo
