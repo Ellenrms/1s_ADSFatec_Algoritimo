@@ -1,0 +1,53 @@
+Algoritmo "calcularIMC"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Antonio Carlos Nicolodi 
+// Descrição   : Aqui você descreve o que o programa faz! (função)
+// Autor(a)    : Nome do(a) aluno(a)
+// Data atual  : 30/08/2023
+Var
+   peso, altura_cm, altura_m, imc: Real
+
+Inicio
+   Escreva("Digite o peso (em KG): ")
+   Leia(peso)
+
+   Escreva("Digite a altura (em centímetros): ")
+   Leia(altura_cm)
+
+   altura_m <- altura_cm / 100
+   imc <- peso / (altura_m * altura_m)
+
+   Escreval("Seu IMC é: ", imc)
+
+   Se imc < 17 Entao
+      Escreval ("Muito abaixo do peso")
+   Senao
+      Se imc < 18.5 Entao
+         Escreval ("Abaixo do peso")
+      Senao
+         Se imc < 25 Entao
+            Escreval ("Peso normal")
+         Senao
+            Se imc < 30 Entao
+               Escreval ("Acima do peso")
+            Senao
+               Se imc < 35 Entao
+                  Escreval ("Obesidade I")
+               Senao
+                  Se imc < 40 Entao
+                     Escreval ("Obesidade II (severa)")
+                  Senao
+                     Escreval ("Obesidade III (mórbida)")
+                  FimSe
+               FimSe
+            FimSe
+         FimSe
+      FimSe
+   FimSe
+
+FimAlgoritmo
+
+
+
+
+
