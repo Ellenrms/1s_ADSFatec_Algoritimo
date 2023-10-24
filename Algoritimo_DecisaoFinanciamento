@@ -1,0 +1,30 @@
+Algoritmo "decisaoFinanc"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Antonio Carlos Nicolodi 
+// Descrição   : Aqui você descreve o que o programa faz! (função)
+// Autor(a)    : Nome do(a) aluno(a)
+// Data atual  : 30/08/2023
+Var
+// Seção de Declarações das variáveis 
+   valorDesejado, valorEntrada, rendaMensal: Real
+
+Inicio
+// Seção de Comandos, procedimento, funções, operadores, etc... 
+
+   Escreva("Digite o valor desejado para o financiamento: ")
+   Leia(valorDesejado)
+
+   Escreva("Digite o valor da entrada: ")
+   Leia(valorEntrada)
+
+   Escreva("Digite a renda mensal do cliente: ")
+   Leia(rendaMensal)
+
+   Se (valorDesejado <= (rendaMensal * 10)) E (valorEntrada >= (valorDesejado * 40/100))Entao
+      Escreva("Financiamento aprovado! O cliente é elegível.")
+   Senao
+      Escreva("Financiamento não aprovado. O cliente não é elegível.")
+   FimSe
+   
+FimAlgoritmo
+
