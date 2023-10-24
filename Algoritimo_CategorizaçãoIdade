@@ -1,0 +1,30 @@
+Algoritmo "categorizacaoIdade"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Maicon
+// Descrição   :       Estrutura de decisao
+// Autor(a)    : Ellen
+// Data atual  : 30/08/2023
+Var
+// Seção de Declarações das variáveis 
+   idade: Inteiro
+
+Inicio
+// Seção de Comandos, procedimento, funções, operadores, etc... 
+
+    Escreva("Digite a idade da pessoa: ")
+   Leia(idade)
+
+   Se (idade >= 0) E (idade <= 12) Entao
+      Escreva("Criança")
+   Senao
+      Se (idade >= 13) E (idade <= 19) Entao
+         Escreva("Adolescente")
+      Senao
+         Se (idade >= 20) E (idade <= 59) Entao
+            Escreva("Adulto")
+         Senao
+            Escreva("Idoso")
+         FimSe
+      FimSe
+   FimSe
+FimAlgoritmo
