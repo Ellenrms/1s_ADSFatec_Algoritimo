@@ -1,0 +1,22 @@
+Algoritmo "bemvindo"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Maicon
+// Descrição   : Declaração de Bem Vindo
+// Autor(a)    : Ellen R. Mateus de Souza
+// Data atual  : 21/08/2023
+Var
+// Seção de Declarações das variáveis 
+nome: caractere
+
+
+Inicio
+// Seção de Comandos, procedimento, funções, operadores, etc... 
+       Escreva ("Qual Seu Nome: ")
+       Leia (nome)
+       
+       Escreva ("Bem Vindo(a) ",nome)
+
+Fimalgoritmo
+//
+//
+//
