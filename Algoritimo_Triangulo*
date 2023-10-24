@@ -1,0 +1,42 @@
+Algoritmo "semnome"
+// Descrição   : Aqui você descreve o que o programa faz! (função)
+// Autor(a)    : Nome do(a) aluno(a)
+// Data atual  : 02/10/2023
+Var
+// Seção de Declarações das variáveis 
+ c, l,li,lii,i,f,fi,triangulo: inteiro
+   a,b,g,h:caractere
+Inicio
+     a <- " "
+     b <- "*"
+     i <- 3
+     escreva("Digite o valor para os lados do triangulo:")
+     leia(triangulo)
+     i <- triangulo - 2
+     li <- triangulo
+     lii <- triangulo - 2
+     fi <- triangulo -1
+
+// Seção de Comandos, procedimento, funções, operadores, etc...
+         para l <- 0 ate li faca
+       para c <- i ate 0 passo -1 faca
+            escreva(a)
+         se(c = 0) entao
+            escreval(b+h+g)
+         se(h = "")entao
+            h <- " "
+            g <- "*"
+         senao
+            h <- h + " " + " "
+           fimse
+            fimse
+         se(l=lii) entao
+            para f <- 0 ate fi faca
+            escreva(b + " ")
+          fimpara
+           fimse
+            fimpara
+             i <- i - 1
+            fimpara
+
+Fimalgoritmo
