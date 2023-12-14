@@ -1,0 +1,49 @@
+ALGORITMO "EX_mercadoria"
+
+tipo
+   dados = REGISTRO
+			   COD, QTDE: INTEIRO
+			   NOME : CARACTERE
+	   	   PRECO : REAL
+           FIMREGISTRO
+
+var	I, NUM, ACHOU, cont: INTEIRO
+      MERC : vetor [1..3] de dados
+    
+INICIO
+	cont <- 0
+	PARA  I <- 1 ATE 3 FACA   // CADASTRO DAS MERCADORIAS --------------------
+
+		cont <- cont + 1
+		MERC[I].COD <- cont
+		ESCREVAL( "DIGITE O NOME DA MERCADORIA")
+		LEIA (MERC[I].NOME)
+		ESCREVAL( "DIGITE O PREÇO DA MERCADORIA")
+		LEIA (MERC[I].PRECO)
+		ESCREVAL( "DIGITE A QTDE EM ESTOQUE")
+		LEIA (MERC[I].QTDE)
+	FIMPARA
+
+   // PESQUISA DOS DADOS--------------------- 
+   
+	ACHOU <- 0   // não procurou nada ainda
+	ESCREVAL( "DIGITE O CÓDIGO A SER PESQUISADO")
+	LEIA (NUM)
+ 
+	PARA I<- 1 ATE 3 FACA
+
+		SE (NUM = MERC[I].COD) ENTAO
+
+			ACHOU <- 1   // achei o código que estava procurando
+			ESCREVAL( "NOME = ",MERC[I].NOME)
+			ESCREVAL( "PREÇO = ",MERC[I].PRECO)
+			ESCREVAL( "QTDE EM ESTOQUE = ",MERC[I].QTDE)
+		FIMSE
+
+   FIMPARA
+    
+	SE (ACHOU = 0) ENTAO
+		ESCREVAL( "CODIGO DA MERCADORIA NÃO ENCONTRADO")
+   FIMSE
+
+FIMALGORITMO
