@@ -1,0 +1,146 @@
+import java.util.Scanner;
+
+public class SistBancario {
+
+    static class Conta {
+        int numero;
+        String tipo;
+        String nome;
+        String cpf;
+        String telefone;
+        double saldo;
+    }
+
+    public static void main(String[] args) {
+        Conta[] contas = cadastrarClientes();
+        Scanner scanner = new Scanner(System.in);
+        int opcao;
+
+        do {
+            exibirMenu();
+            System.out.print("Digite o número da opção desejada: ");
+            opcao = scanner.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    visualizarContasCliente(contas);
+                    break;
+                case 2:
+                    realizarSaque(contas);
+                    break;
+                case 3:
+                    realizarDeposito(contas);
+                    break;
+                case 4:
+                    consultarSaldo(contas);
+                    break;
+                case 5:
+                    System.out.println("Saindo do sistema...");
+                    break;
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
+            }
+        } while (opcao != 5);
+    }
+
+    static void exibirMenu() {
+        System.out.println("\nMENU DE OPÇÕES");
+        System.out.println("1) Visualizar todas as contas e seus respectivos dados de um determinado cliente");
+        System.out.println("2) Realizar um Saque (retirada de dinheiro da conta escolhida), atualizando os dados no vetor");
+        System.out.println("3) Realizar um Depósito (entrada de dinheiro na conta escolhida), atualizando os dados no vetor");
+        System.out.println("4) Consultar saldo da conta");
+        System.out.println("5) Sair");
+    }
+
+    static void visualizarContasCliente(Conta[] contas) {
+        System.out.print("Digite o CPF do cliente: ");
+        Scanner scanner = new Scanner(System.in);
+        String cpf = scanner.next();
+
+        boolean encontrado = false;
+        for (Conta conta : contas) {
+            if (conta != null && conta.cpf.equals(cpf)) {
+                System.out.println(conta.numero + ": " + conta.nome + " - Saldo: " + conta.saldo);
+                encontrado = true;
+            }
+        }
+
+        if (!encontrado) {
+            System.out.println("Conta não encontrada para o CPF informado.");
+        }
+    }
+
+    static void realizarSaque(Conta[] contas) {
+        System.out.print("Digite o número da conta: ");
+        Scanner scanner = new Scanner(System.in);
+        int numeroConta = scanner.nextInt();
+
+        Conta conta = buscarConta(contas, numeroConta);
+        if (conta != null) {
+            System.out.print("Digite o valor do saque: ");
+            double valor = scanner.nextDouble();
+
+            if (conta.saldo >= valor) { 
+                conta.saldo -= valor;
+                System.out.println("Saque realizado com sucesso.");
+            } else {
+                System.out.println("Saldo insuficiente para realizar o saque.");
+            }
+        } else {
+            System.out.println("Conta não encontrada.");
+        }
+    }
+
+    static void realizarDeposito(Conta[] contas) {
+        System.out.print("Digite o número da conta: ");
+        Scanner scanner = new Scanner(System.in);
+        int numeroConta = scanner.nextInt();
+
+        Conta conta = buscarConta(contas, numeroConta);
+        if (conta != null) {
+            System.out.print("Digite o valor do depósito: ");
+            double valor = scanner.nextDouble();
+
+            conta.saldo += valor;
+            System.out.println("Depósito realizado com sucesso.");
+        } else {
+            System.out.println("Conta não encontrada.");
+        }
+    }
+
+    static void consultarSaldo(Conta[] contas) {
+        System.out.print("Digite o número da conta: ");
+        Scanner scanner = new Scanner(System.in);
+        int numeroConta = scanner.nextInt();
+
+        Conta conta = buscarConta(contas, numeroConta);
+        if (conta != null) {
+            System.out.println("Saldo atual: " + conta.saldo);
+        } else {
+            System.out.println("Conta não encontrada.");
+        }
+    }
+
+    static Conta buscarConta(Conta[] contas, int numeroConta) {
+        for (Conta conta : contas) {
+            if (conta != null && conta.numero == numeroConta) {
+                return conta;
+            }
+        }
+        return null;
+    }
+
+    static Conta[] cadastrarClientes() {
+        Conta[] contas = new Conta[10];
+        for (int i = 0; i < 10; i++) {
+            contas[i] = new Conta();
+            contas[i].numero = i + 1;
+            contas[i].tipo = "Conta Corrente";
+            contas[i].nome = "Cliente " + (i + 1);
+            contas[i].cpf = "111.111.111-1" + i; // CPFs diferentes para cada cliente
+            contas[i].telefone = "91111-111" + i; // Telefones diferentes para cada cliente
+            contas[i].saldo = 1000 + i * 100;
+        }
+        return contas;
+    }
+}
