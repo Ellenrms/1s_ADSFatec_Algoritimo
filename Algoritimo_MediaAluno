@@ -1,0 +1,69 @@
+ALGORITMO "EX_ALUNO"
+
+tipo
+            dados = REGISTRO
+			   COD: INTEIRO
+            NOME : CARACTERE
+	   	   N1, N2, N3 : REAL
+	   	   DISCP: CARACTERE
+	   	   CURSO: CARACTERE
+	   	   ESCOLA: CARACTERE
+	   	   
+           FIMREGISTRO
+
+var
+   	I, NUM, ACHOU, cont: INTEIRO
+      ALUNO : vetor [1..2] de dados
+      IDALUNO: CARACTERE
+      MEDIA:REAL
+    
+INICIO
+	cont <- 0
+	PARA  I <- 1 ATE 2 FACA   // CADASTRO DE ALUNO --------------------
+
+		cont <- cont + 1
+		ALUNO[I].COD <- cont
+		ESCREVAL( "DIGITE DO ALUNO")
+		LEIA (ALUNO[I].NOME)
+		ESCREVAL( "DIGITE A DISCIPLINA")
+		LEIA (ALUNO[I].DISCP)
+		ESCREVAL( "DIGITE A ESCOLA")
+		LEIA (ALUNO[I]. ESCOLA)
+		ESCREVAL( "DIGITE A NOTA 1")
+		LEIA (ALUNO[I].N1)
+		ESCREVAL( "DIGITE A NOTA 2")
+		LEIA (ALUNO[I].N2)
+		ESCREVAL( "DIGITE A NOTA 3")
+		LEIA (ALUNO[I].N3)
+
+	FIMPARA
+
+   // PESQUISA DOS DADOS--------------------- 
+   
+	ACHOU <- 0   // não procurou nada ainda
+	
+	ESCREVAL("DIGITE O NOME DO ALUNO")
+   LEIA(IDALUNO)
+   
+	PARA I <- 1 ATE 2 FACA
+
+		SE (IDALUNO = ALUNO[I].NOME) ENTAO
+         MEDIA <- (ALUNO[I].N1+ALUNO[I].N2+ALUNO[I].N3)/3
+
+			ACHOU <- 1   // achei o código que estava procurando
+			ESCREVAL( "NOME = ",ALUNO[I].NOME)
+			ESCREVAL( "DISCIPLINA = ",ALUNO[I].DISCP)
+			ESCREVAL( "NOTA 1 = ",ALUNO[I].N1)
+			ESCREVAL( "NOTA 2 = ",ALUNO[I].N2)
+			ESCREVAL( "NOTA 3 = ",ALUNO[I].N3)
+			ESCREVAL( "SUA MÉDIA É: ", MEDIA)
+		FIMSE
+		
+
+   FIMPARA
+    
+	SE (ACHOU = 0) ENTAO
+		ESCREVAL( "ALUNO NÃO ENCONTRADO")
+   FIMSE
+
+FIMALGORITMO
