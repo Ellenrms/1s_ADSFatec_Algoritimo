@@ -1,0 +1,32 @@
+Algoritmo "QuaisPrimosde0a1000"
+// 
+//  
+// Descrição   : Aqui você descreve o que o programa faz! (função)
+// Autor(a)    : Nome do(a) aluno(a)
+// Data atual  : 13/11/2023
+Var
+// Seção de Declarações das variáveis 
+    i, p: inteiro
+    num: inteiro
+
+Inicio
+// Seção de Comandos, procedimento, funções, operadores, etc... 
+
+     Para num de 0 ate 1000 faca
+         p <- 0
+        para i de 1 ate num faca
+        se (num mod i = 0) entao
+        p <- p + 1
+        fimse
+   fimpara
+   
+   se (p = 2) entao
+   escreva ("  #  ")
+   senao (p <> 2)
+      escreva(num)
+   fimse
+fimpara
+
+
+
+Fimalgoritmo
