@@ -1,0 +1,52 @@
+Algoritmo "ex1_prova"
+Var
+
+n1,n2,n3: real
+media: real
+letra: caractere
+//----------------------------------------------
+funcao calculo(a:real; b:real; c:real; x:caractere): real
+var med, menor, soma:real
+    letra: caractere
+inicio
+    //escreval("digite A - calcular media aritmetica ou X - media especial")
+    //leia(letra)
+    
+    se(x = "A") entao
+        med <- (a+b+c)/3
+    senao
+         se (a<b) e (a<c) entao
+             menor <- a
+         fimse
+         se (b<a) e (b<c) entao
+              menor <- b
+         fimse
+         se (c<a) e (c<b) entao
+              menor <- c
+         fimse
+
+         soma <- a + b + c
+         
+         med <- (soma-menor)/2
+    fimse
+    
+    retorne med
+
+fimfuncao
+
+//----------------------------------
+
+
+inicio
+escreval("digite a primeira nota")
+leia(n1)
+escreval("digite a segunda nota")
+leia(n2)
+escreval("digite a terceira nota")
+leia(n3)
+escreval("digite A - media aritmetica ou X - media especial")
+leia(letra)
+media <- calculo(n1,n2,n3,letra)
+escreval("media = ",media)
+
+Fimalgoritmo
