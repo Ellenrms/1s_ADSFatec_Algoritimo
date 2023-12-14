@@ -1,0 +1,79 @@
+###### classes ######
+package lojaluciana;
+
+public class produto {
+    int codigo;
+    String descricao;
+    String categoria;
+    double precounitario;
+    int qtde;
+}
+###############################
+
+package lojaluciana;
+
+import java.util.Scanner;
+public class Lojaluciana {
+
+ 
+    public static void main(String[] args) {
+       Scanner scan = new Scanner(System.in);
+       produto prod[] = new produto[10];
+        for (int i = 0; i < prod.length; i++) {
+            prod[i] = new produto();           
+        }
+        
+        int opcao, achou, ind = 0;
+        do{
+            System.out.println("\nMenu\n"
+                    + "1 - cadastrar produtos\n"
+                    + "2 - consultar produto por categoria\n"
+                    + "3 - entrada ou saida\n"
+                    + "4 - sair\n");
+            opcao = scan.nextInt();
+            
+            switch (opcao){
+                case 1:
+                    achou = 0;
+                    System.out.println("*** Cadastro ***");
+                    System.out.println("Digite o código");
+                    int codigo = scan.nextInt();
+                    
+                    for (int i = 0; i < prod.length; i++) {
+                        if(codigo == prod[i].codigo){
+                            achou = 1;
+                        }   
+                    }
+                    
+                    if (achou == 1) {
+                        System.out.println("Codigo já cadastrado");   
+                    } else {
+                        prod[ind].codigo = codigo;
+                        System.out.println("Digite a descrição");
+                        prod[ind].descricao = scan.next();
+                        System.out.println("Digite a categoria");
+                        prod[ind].categoria = scan.next();
+                        System.out.println("Digite o preço");
+                        prod[ind].precounitario = scan.nextDouble();
+                        System.out.println("Digite a quantidade");
+                        prod[ind].qtde = scan.nextInt();
+                        ind = ind + 1;
+                        
+                    }
+                    System.out.println("Dados cadastrados");
+                    for (int i = 0; i < ind; i++) {
+                        System.out.println(prod[i].codigo + "  " +
+                                prod[i].descricao + "  " + prod[i].categoria +
+                                prod[i].precounitario + "  " + prod[i].qtde);
+                        
+                    }
+                    
+                    break;
+            }
+        
+        
+        }while ( opcao != 4);
+            
+    }
+    
+}
